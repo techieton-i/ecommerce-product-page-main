@@ -1,0 +1,103 @@
+.product {
+  &-img {
+    width: 100vw;
+  }
+
+  &-info {
+    padding: 1.5rem;
+
+    &_company {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $primary-orange;
+      margin: 1em 0;
+      line-height: 1rem;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+
+    &_desc {
+      line-height: 1.5rem;
+      color: $Dark-grayish-blue;
+      margin: 1rem 0;
+    }
+
+    &_price {
+      display: flex;
+      align-items: center;
+      width: 7rem;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+
+      .percent {
+        color: $primary-orange;
+        font-weight: 700;
+        background-color: $primary-pale-orange;
+        border-radius: 5px;
+        padding: 2px 5px;
+      }
+    }
+
+    &__realprice {
+      color: $Grayish-blue;
+      text-decoration: line-through;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .product-amount {
+      display: flex;
+      background-color: $Light-grayis-blue;
+      width: 90vw;
+      height: 3rem;
+      margin: 1.5rem auto;
+      padding: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 9px;
+      position: relative;
+
+      .sign {
+        width: 13px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .minus {
+      }
+      .plus {
+      }
+
+      input {
+        border: none;
+        background: transparent;
+        width: 13rem;
+        height: 2.2em;
+        text-align: center;
+      }
+
+      input:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .cart-btn {
+    display: flex;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    background-color: $primary-orange;
+    color: $White;
+    font-weight: 700;
+    cursor: pointer;
+
+    i {
+      width: 2rem;
+      margin-right: 1rem;
+    }
+  }
+}

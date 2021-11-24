@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  position: relative;
+  padding: 0.5em 0;
+  align-items: center;
+
+  .hamburger {
+    width: 25px;
+    height: 25px;
+    margin: 0.5em 1em;
+  }
+  &-brand {
+    margin: auto 1rem;
+    font-weight: 700;
+    font-size: 2.2rem;
+    padding-bottom: 0.4rem;
+  }
+  .nav {
+    // visibility: hidden;
+    position: absolute;
+    height: 100vh;
+    width: 14rem;
+    padding: 10px;
+    top: 10px;
+    background: $Light-grayis-blue;
+    font-weight: 700;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+
+    &.open {
+      transform: translateX(0);
+      transition: all 1s ease-in-out;
+    }
+
+    .navbar {
+      .navbar-item {
+        list-style-type: none;
+        margin: 1em;
+
+        a {
+          text-decoration: none;
+          color: $Very-vark-blue;
+        }
+      }
+    }
+
+    .menu-close {
+      width: 15px;
+      margin-left: 14px;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .cart {
+    position: relative;
+    right: -6rem;
+  }
+
+  .avatar {
+    // position: absolute;
+    position: relative;
+    right: -7rem;
+    width: 35px;
+    justify-self: flex-end;
+  }
+}
