@@ -3,6 +3,7 @@
   position: relative;
   padding: 0.5em 0;
   align-items: center;
+  width: fit-content;
 
   .hamburger {
     width: 25px;
@@ -25,11 +26,12 @@
     background: $Light-grayis-blue;
     font-weight: 700;
     transform: translateX(-100%);
-    transition: all 1s ease-in-out;
+    transition: all 500ms ease-in-out;
+    z-index: 100;
 
     &.open {
       transform: translateX(0);
-      transition: all 1s ease-in-out;
+      transition: all 500ms ease-in-out;
     }
 
     .navbar {

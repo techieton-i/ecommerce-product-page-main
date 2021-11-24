@@ -1,0 +1,32 @@
+.cart_list {
+  position: absolute;
+  top: 4.5em;
+  background-color: $White;
+  height: 20rem;
+  width: 95vw;
+  left: 0.5em;
+  margin: auto;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0.6px 0.7px 1em #8888;
+  visibility: hidden;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  & h3 {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid $Grayish-blue;
+  }
+
+  & p {
+    text-align: center;
+    font-weight: 700;
+    color: $Grayish-blue;
+    width: 10em;
+    height: 10em;
+    margin: 4em auto;
+  }
+}
