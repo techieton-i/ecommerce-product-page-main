@@ -99,5 +99,10 @@
       width: 2rem;
       margin-right: 1rem;
     }
+
+    &:hover {
+      transform: scale(101%);
+      background-color: hsl(26, 89%, 64%);
+    }
   }
 }

@@ -9,12 +9,14 @@
     width: 25px;
     height: 25px;
     margin: 0.5em 1em;
+    cursor: pointer;
   }
   &-brand {
     margin: auto 1rem;
     font-weight: 700;
     font-size: 2.2rem;
     padding-bottom: 0.4rem;
+    width: 58vw;
   }
   .nav {
     // visibility: hidden;
@@ -50,18 +52,18 @@
       width: 15px;
       margin-left: 14px;
       margin-bottom: 4rem;
+      cursor: pointer;
     }
   }
 
   .cart {
-    position: relative;
-    right: -6rem;
+    margin-right: 1rem;
+    cursor: pointer;
   }
 
   .avatar {
     // position: absolute;
-    position: relative;
-    right: -7rem;
+    margin-right: 1rem;
     width: 35px;
     justify-self: flex-end;
   }
