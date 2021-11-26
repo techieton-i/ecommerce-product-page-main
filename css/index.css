@@ -232,7 +232,7 @@ img {
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
-  height: 20rem;
+  height: 27rem;
   overflow-x: hidden;
   margin: 0 auto;
   position: relative;
@@ -284,6 +284,7 @@ img {
           box-shadow: 0.6px 0.7px 1em #8888;
   visibility: hidden;
   overflow: scroll;
+  z-index: 20;
 }
 
 .cart_list.open {
@@ -370,10 +371,10 @@ img {
   cursor: pointer;
   margin-left: 0.7em;
   bottom: 2em;
-  visibility: hidden;
+  display: none;
 }
 
 .cart-checkout_btn.open {
-  visibility: visible;
+  display: block;
 }
 /*# sourceMappingURL=index.css.map */

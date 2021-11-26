@@ -14,6 +14,10 @@ const checkout_btn = document.querySelector('.cart-checkout_btn');
 
 let currentAmt = 0;
 
+const init = function () {
+    cart.classList.remove('open');
+};
+
 
 burger.addEventListener('click', function () {
     nav.classList.add('open');
@@ -49,6 +53,9 @@ document.addEventListener('keydown', function (e) {
     // console.log(e.key);
     if (e.key === 'Escape' && cart.classList.contains('open')) {
         cart.classList.remove('open');
+        // checkout_btn.classList.remove('open');
+
+
     }
 });
 
@@ -64,7 +71,7 @@ const prodmov = function (arr) {
 
     arr.forEach(movs => {
 
-        const prodHtml = ` <div class="product-in-cart">
+        const prodHtml = ` <div class="product-in-cart " data-no = '${movs}'>
                   <div class="product-cart-thumbnail prod-no_${movs}"></div>
         
                   <div class="product-cart-info">
@@ -78,37 +85,15 @@ const prodmov = function (arr) {
 
 
         cartProducts.insertAdjacentHTML("beforeend", prodHtml);
+
+
     });
+
 
     checkout_btn.classList.add('open');
 
 };
 
-
-cartProducts.addEventListener('click', function (e) {
-    e.preventDefault();
-    const deleteBtn = e.target.closest('.product-delete');
-    const item = e.target.closest('.product-in-cart');
-    const prdcart = item.closest('.cart-products').querySelectorAll('.product-in-cart');
-
-    if (!deleteBtn) return;
-
-    item.style.display = 'none';
-    if (cartProducts.textContent === ' ') {
-        console.log(cartProducts.textContent);
-        prdcart.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
-        checkout_btn.classList.remove('open');
-    }
-
-
-
-
-
-    // console.log(prdcart);
-    // console.log(item);
-    // console.log(deleteBtn);
-    console.log(cartProducts.innerHTML);
-});
 
 addToCart.addEventListener('click', function () {
 
@@ -121,4 +106,38 @@ addToCart.addEventListener('click', function () {
     currentAmt = 0;
     prdAmt.textContent = currentAmt;
 
+});
+
+
+cartProducts.addEventListener('click', function (e) {
+    e.preventDefault();
+    const deleteBtn = e.target.closest('.product-delete');
+    const item = e.target.closest('.product-in-cart');
+
+    const prdcart = item.closest('.cart-products').querySelectorAll('.product-in-cart');
+
+    if (!deleteBtn) return;
+
+    // if (cartProducts.textContent === ' ') {
+    //     console.log(cartProducts.textContent);
+    //     prdcart.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
+    //     checkout_btn.classList.remove('open');
+    // }
+
+    prdcart.forEach((prd, i) => {
+        // console.log(prd === Number(item.dataset.no));
+        if (Number(prd.dataset.no) === Number(item.dataset.no)) {
+            prod.splice(i, 1);
+            prdcart.splice(i, 1);
+        }
+    });
+
+
+
+
+
+    // console.log(prdcart);
+    // console.log(item);
+    // console.log(deleteBtn);
+    // console.log(cartProducts.innerHTML);
 });

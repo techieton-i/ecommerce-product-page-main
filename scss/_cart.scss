@@ -11,6 +11,7 @@
   box-shadow: 0.6px 0.7px 1em #8888;
   visibility: hidden;
   overflow: scroll;
+  z-index: 20;
 
   &.open {
     visibility: visible;
@@ -89,9 +90,9 @@
   cursor: pointer;
   margin-left: 0.7em;
   bottom: 2em;
-  visibility: hidden;
+  display: none;
 
   &.open {
-    visibility: visible;
+    display: block;
   }
 }
