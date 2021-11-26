@@ -10,6 +10,8 @@ const addToCart = document.querySelector('.cart-btn');
 const cartProducts = document.querySelector('.cart-products');
 const checkout_btn = document.querySelector('.cart-checkout_btn');
 
+
+
 let currentAmt = 0;
 
 
@@ -29,6 +31,8 @@ prdAmt.textContent = currentAmt;
 
 
 
+
+
 addItems.addEventListener('click', () => {
     currentAmt += 1;
     prdAmt.textContent = currentAmt;
@@ -43,44 +47,77 @@ removeItems.addEventListener('click', () => {
 
 document.addEventListener('keydown', function (e) {
     // console.log(e.key);
-    console.log(e);
     if (e.key === 'Escape' && cart.classList.contains('open')) {
         cart.classList.remove('open');
     }
 });
 
-const arr = [];
+const prod = [];
 
-addToCart.addEventListener('click', function (e) {
-    empty = cartProducts.textContent === '';
-    console.log(empty);
-    // arr.push(e);
+const prodmov = function (arr) {
 
 
-    const prodHtml = ` <div class="product-in-cart">
-          <div class="product-cart-thumbnail"></div>
+    if (currentAmt === 0) return;
 
-          <div class="product-cart-info">
-            <p class="">Autumn Limited Edition Sneakers</p>
-            <p class="product-cart-price">$125.00 * ${currentAmt} <span> $375.00</span></p>
-          </div>
+    cartProducts.innerHTML = ' ';
 
-          <div class="product-delete"><img src="./images/icon-delete.svg" alt=""></div>
 
-        </div>`;
+    arr.forEach(movs => {
 
-    // const checkoutBtn = `<button class="cart-checkout_btn"> Checkout</button>`;
+        const prodHtml = ` <div class="product-in-cart">
+                  <div class="product-cart-thumbnail prod-no_${movs}"></div>
+        
+                  <div class="product-cart-info">
+                    <p class="">Autumn Limited Edition Sneakers</p>
+                    <p class="product-cart-price" onclick = "console.log('delete')">$125.00 * ${movs} <span> $375.00</span></p>
+                  </div>
+        
+                  <div class="product-delete"><img src="./images/icon-delete.svg" alt=""></div>
+        
+                </div>`;
 
-    // arr.forEach(movs => {
-    // cartProducts.insertAdjacentHTML("beforeend", prodHtml);
-    // });
-    if (!cartProducts.textContent === '') {
+
         cartProducts.insertAdjacentHTML("beforeend", prodHtml);
-    } else {
-        cartProducts.innerHTML = '';
-        cartProducts.insertAdjacentHTML("beforeend", prodHtml);
-    }
+    });
+
     checkout_btn.classList.add('open');
+
+};
+
+
+cartProducts.addEventListener('click', function (e) {
+    e.preventDefault();
+    const deleteBtn = e.target.closest('.product-delete');
+    const item = e.target.closest('.product-in-cart');
+    const prdcart = item.closest('.cart-products').querySelectorAll('.product-in-cart');
+
+    if (!deleteBtn) return;
+
+    item.style.display = 'none';
+    if (cartProducts.textContent === ' ') {
+        console.log(cartProducts.textContent);
+        prdcart.innerHTML = `<p class="cart-empty">Your cart is empty</p>`;
+        checkout_btn.classList.remove('open');
+    }
+
+
+
+
+
+    // console.log(prdcart);
+    // console.log(item);
+    // console.log(deleteBtn);
+    console.log(cartProducts.innerHTML);
+});
+
+addToCart.addEventListener('click', function () {
+
+
+    currentAmt !== 0 && prod.push(currentAmt);
+    console.log(prod);
+
+    prodmov(prod);
+
     currentAmt = 0;
     prdAmt.textContent = currentAmt;
 
