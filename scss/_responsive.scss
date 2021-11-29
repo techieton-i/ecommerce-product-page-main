@@ -1,0 +1,55 @@
+@include media-lg {
+  .header {
+    padding: 0.5em 0;
+    display: flex;
+    position: inherit;
+    width: 100vw;
+
+    .hamburger {
+      display: none;
+    }
+
+    &-brand {
+      margin: auto 1.5rem;
+      width: 50vw;
+    }
+
+    .nav {
+      position: relative;
+      background: none;
+      height: fit-content;
+      top: 0;
+      margin: 0 2rem;
+      padding: 0;
+      width: 20%;
+      transition: none;
+
+      .navbar {
+        display: flex;
+
+        .navbar-item {
+          list-style-type: none;
+
+          a:hover {
+            color: $primary-orange;
+          }
+        }
+      }
+
+      .menu-close {
+        display: none;
+      }
+    }
+  }
+
+  .cart {
+    margin: 0 2rem;
+  }
+
+  .avatar {
+    margin: 0 1rem;
+  }
+}
+
+@include media-xl {
+}

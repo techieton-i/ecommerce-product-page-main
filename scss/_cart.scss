@@ -9,12 +9,12 @@
   color: black;
   border-radius: 11px;
   box-shadow: 0.6px 0.7px 1em #8888;
-  visibility: hidden;
+  display: none;
   overflow: scroll;
   z-index: 20;
 
   &.open {
-    visibility: visible;
+    display: block;
     opacity: 1;
   }
 
@@ -38,7 +38,7 @@
 
   .product-cart-thumbnail {
     margin: 1.2em 1em 0 1.2em;
-    width: 15%;
+    width: 4rem;
     height: 3.5em;
     border-radius: 5px;
     background-image: url("/images/image-product-1-thumbnail.jpg");
